@@ -2,8 +2,11 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import pandas as pd
+import os
 
-model=joblib.load("ml_source/covid_diag.pkl")
+BASE_DIR = os.path.dirname(__file__)
+model_path = os.path.join(BASE_DIR, "covid_diag.pkl")
+model = joblib.load(model_path)
 
 class inp(BaseModel):
     Age:int
