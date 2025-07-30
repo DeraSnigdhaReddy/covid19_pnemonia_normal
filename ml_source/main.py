@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import joblib
 import pandas as pd
 
-model=joblib.load("D:\demo-covid\ml_source\covid_diag.pkl")
+model=joblib.load("covid_diag.pkl")
 
 class inp(BaseModel):
     Age:int
